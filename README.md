@@ -1,6 +1,4 @@
 # Ubuntu 16.04 Unattended-Install for UEFI using preseed
-======================
-
 
     cd /root
     wget http://releases.ubuntu.com/16.04.2/ubuntu-16.04.2-server-amd64.iso
