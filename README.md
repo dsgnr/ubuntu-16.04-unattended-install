@@ -66,6 +66,7 @@ Replace the contents with the following. __Make sure you alter the HTTP location
 ## Preseed file
 Upload preseed .cfg file to location specified in grub.cfg/txt.cfg. As we have specified networking within the Grub menu, we are now able to pull the preseed file over network using DHCP.
 
+## User passwords
 You can either encrypt your password, or pass it over plain text. If you want to use plain text, then comment the line `d-i passwd/user-password-crypted` and uncomment the two lines above containing `passwd/user-password` and `passwd/user-password-again`. __Don't forget to update your password__. If you would like to hash the password, enter the following line. This will prompt for a password and return a hash for you to use. You must then add your hash to the preseed.cfg file. 
     
     mkpasswd -m sha-512
