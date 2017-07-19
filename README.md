@@ -64,9 +64,13 @@ Replace the contents with the following. __Make sure you alter the HTTP location
     sudo xorriso -as mkisofs -isohybrid-mbr isolinux/isohdpfx.bin -c isolinux/boot.cat -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -isohybrid-gpt-basdat -o ../custom-ubuntu-http.iso .
     
 ## Preseed file
-Upload preseed .cfg file to location specified in grub.cfg. As we have specified networking within the Grub menu, we are now able to pull the preseed file over network.
+Upload preseed .cfg file to location specified in grub.cfg/txt.cfg. As we have specified networking within the Grub menu, we are now able to pull the preseed file over network using DHCP.
 
 You can either encrypt your password, or pass it over plain text. If you would like to hash the password, enter the following line. This will prompt for a password and return a hash for you to use. You must then add your hash to the preseed.cfg file.
     
     mkpasswd -m sha-512
+
+## Post install script
+
+* Explain this!
 
