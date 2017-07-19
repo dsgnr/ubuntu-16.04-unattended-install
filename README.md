@@ -1,4 +1,7 @@
 # Ubuntu 16.04 Unattended-Install for UEFI using preseed
+Create a Legacy and UEFI automated Ubuntu ISO installer. Using preseed.cfg and post-install scripts, this can completely automate installing Ubuntu 16.04. This may work with other distros, but I have yet to test this. Your personal variables such as default packages, SSH keys and username/password will obviously need to be edited before use.
+
+Follow the steps below to create your own image.
 
     cd /root
     wget http://releases.ubuntu.com/16.04.2/ubuntu-16.04.2-server-amd64.iso
