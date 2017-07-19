@@ -53,6 +53,7 @@ If you do not want to enable preseeding on a legacy device, this step isn't nece
 Upload preseed .cfg file to location specified in grub.cfg. As we have specified networking within the Grub menu, we are now able to pull the preseed file over network.
 
 You can either encrypt your password, or pass it over plain text. If you would like to hash the password, enter the following line. This will prompt for a password and return a hash for you to use. You must then add your hash to the preseed.cfg file.
+    
     mkpasswd -m sha-512
 
 ## Still to do:
