@@ -62,6 +62,24 @@ Replace the contents with the following. __Make sure you alter the HTTP location
 
     cd custom-iso
     sudo xorriso -as mkisofs -isohybrid-mbr isolinux/isohdpfx.bin -c isolinux/boot.cat -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -isohybrid-gpt-basdat -o ../custom-ubuntu-http.iso .
+
+## Confirm partitions
+As we have created a hybrid ISO, meaning it can be used in both UEFI and Legacy modes, it's good to make sure EFI is showing in the partition table. You can check this by using the following command:
+
+    fdisk -l custom-ubuntu-http.iso
+
+If the partitions have been created correctly, you should see something similar to the following:
+
+    Disk custom-ubuntu-http.iso: 841 MiB, 881852416 bytes, 1722368 sectors
+    Units: sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disklabel type: dos
+    Disk identifier: 0x19a15b31
+
+    Device                  Boot Start     End Sectors  Size Id Type
+    custom-ubuntu-http.iso1 *        0 1722367 1722368  841M  0 Empty
+    custom-ubuntu-http.iso2       4036    8899    4864  2.4M ef EFI (FAT-12/16/32)
     
 ## Preseed file
 Upload preseed .cfg file to location specified in grub.cfg/txt.cfg. As we have specified networking within the Grub menu, we are now able to pull the preseed file over network using DHCP.
