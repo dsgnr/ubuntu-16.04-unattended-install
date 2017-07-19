@@ -70,10 +70,3 @@ You can either encrypt your password, or pass it over plain text. If you would l
     
     mkpasswd -m sha-512
 
-## Still to do:
-* Update Grub menu so can be used in Legacy mode
-* Tidy preseed.cfg
-* Confirm default packages to install
-* Add post-install scripts
-* Add snippet to create MD5 hashed password
-* Add snippet to get post-install script, then execute
