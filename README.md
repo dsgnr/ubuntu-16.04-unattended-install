@@ -96,7 +96,7 @@ The preseed uses wget to download your post-install.sh file to the /tmp folder j
 * apt-get update && upgrade -y
 * apt-get dist-upgrade -y
 * Installs basic packages defined at the head of the script
-* Installs SSH keys for both the default user, and root. __You must edit the post-install.sh file to add your keys
+* Installs SSH keys for both the default user, and root. __You must edit the post-install.sh file to add your keys__
 * Edits /etc/sshd_config to allow root ssh access, as well as password authentication
 * Configures networking specified at the top of the script
 * Changes the hostname which is defined at the top of the script. Unfortunately, there seems to be a bug in Xenial which ignores the hostname set in the preseed file. Therefore, a default hostname is set within grub to remove the prompt during installation. If you know a better way around this, please commit a PR!
